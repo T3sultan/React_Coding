@@ -7,11 +7,9 @@ const ModalBData = () => {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-  return (
-    <div>
-      <h3>{data?.info?.contact?.email}</h3>
-    </div>
-  );
+  return <div>
+  { data && data ? <h3>{data?.us} </h3> : <h2>Nothing Us Data</h2>}
+  </div>;
 };
 
 export default ModalBData;

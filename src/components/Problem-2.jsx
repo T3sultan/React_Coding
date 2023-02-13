@@ -49,13 +49,16 @@ const Problem2 = () => {
         <h4 className="text-center text-uppercase mb-5">Problem-2</h4>
 
         <div className="d-flex justify-content-center gap-3">
-          <Button variant="primary" onClick={handleShowA}>
-            All Contact
-          </Button>
+          <Button onClick={handleShowA}>All Contact</Button>
           <Modal show={showA} onHide={handleCloseA}>
             <Modal.Header closeButton className="pointer">
               <Modal.Title onClick={handleCloseA}>
-                <Button variant="primary" onClick={handleShow}>
+                <Button
+                  style={{
+                    backgroundColor: "#46139f",
+                  }}
+                  onClick={handleShow}
+                >
                   Modal A
                 </Button>
               </Modal.Title>
@@ -72,7 +75,12 @@ const Problem2 = () => {
                   <Modal.Title onClick={handleClose2}>
                     {" "}
                     <Link to={"/modalA"}>
-                      <Button variant="primary" onClick={handleShow2}>
+                      <Button
+                        style={{
+                          backgroundColor: "#46139f",
+                        }}
+                        onClick={handleShow2}
+                      >
                         Modal A
                       </Button>
                     </Link>
@@ -88,7 +96,12 @@ const Problem2 = () => {
                   <Modal.Title onClick={handleClose3}>
                     {" "}
                     <Link to={"/modalB"}>
-                      <Button variant="primary" onClick={handleShow3}>
+                      <Button
+                        style={{
+                          backgroundColor: "#ff7f50",
+                        }}
+                        onClick={handleShow3}
+                      >
                         Modal B
                       </Button>
                     </Link>
@@ -112,7 +125,12 @@ const Problem2 = () => {
             <Modal.Header closeButton className="pointer">
               <Modal.Title onClick={handleCloseB}>
                 {" "}
-                <Button variant="primary" onClick={handleShow1}>
+                <Button
+                  style={{
+                    backgroundColor: "#ff7f50",
+                  }}
+                  onClick={handleShow1}
+                >
                   Modal B
                 </Button>
               </Modal.Title>
@@ -120,17 +138,50 @@ const Problem2 = () => {
           </Modal>
           <Modal show={show1} onHide={handleClose1}>
             <Modal.Body>
-              <Modal.Body>
-                <Button variant="secondary" onClick={handleClose1}>
-                  All Contacts
-                </Button>
-                <Button variant="primary" onClick={handleClose1}>
-                  US Contacts
-                </Button>
-                <Button variant="primary" onClick={handleClose1}>
-                  Close
-                </Button>
-              </Modal.Body>
+              <Button variant="secondary" onClick={handleShow2}>
+                All Contacts
+              </Button>
+              <Modal show={show2} onHide={handleClose2}>
+                <Modal.Header closeButton className="pointer">
+                  <Modal.Title onClick={handleClose2}>
+                    {" "}
+                    <Link to={"/modalA"}>
+                      <Button
+                        style={{
+                          backgroundColor: "#46139f",
+                        }}
+                        onClick={handleShow2}
+                      >
+                        Modal A
+                      </Button>
+                    </Link>
+                  </Modal.Title>
+                </Modal.Header>
+              </Modal>
+
+              <Button variant="primary" onClick={handleShow3}>
+                US Contacts
+              </Button>
+              <Modal show={show3} onHide={handleClose3}>
+                <Modal.Header closeButton className="pointer">
+                  <Modal.Title onClick={handleClose3}>
+                    {" "}
+                    <Link to={"/modalB"}>
+                      <Button
+                        style={{
+                          backgroundColor: "#ff7f50",
+                        }}
+                        onClick={handleShow3}
+                      >
+                        Modal B
+                      </Button>
+                    </Link>
+                  </Modal.Title>
+                </Modal.Header>
+              </Modal>
+              <Button variant="primary" onClick={handleClose1}>
+                Close
+              </Button>
             </Modal.Body>
           </Modal>
         </div>
